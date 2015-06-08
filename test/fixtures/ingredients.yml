@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beer_id: 
+  qty: 1.5
+  measurement: MyString
+  name: MyString
+
+two:
+  beer_id: 
+  qty: 1.5
+  measurement: MyString
+  name: MyString

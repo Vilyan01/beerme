@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  og: 1.5
+  fg: 1.5
+  abv: 1.5
+  color: MyString
+  instructions: MyText
+  added_by: 1
+
+two:
+  name: MyString
+  description: MyText
+  og: 1.5
+  fg: 1.5
+  abv: 1.5
+  color: MyString
+  instructions: MyText
+  added_by: 1

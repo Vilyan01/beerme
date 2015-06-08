@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Beer Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beer</th>
+      <th>Like</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beer_comments.each do |beer_comment| %>
+      <tr>
+        <td><%= beer_comment.beer %></td>
+        <td><%= beer_comment.like %></td>
+        <td><%= beer_comment.user_id %></td>
+        <td><%= link_to 'Show', beer_comment %></td>
+        <td><%= link_to 'Edit', edit_beer_comment_path(beer_comment) %></td>
+        <td><%= link_to 'Destroy', beer_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beer comment', new_beer_comment_path %>

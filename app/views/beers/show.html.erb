@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @beer.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @beer.description %>
+</p>
+
+<p>
+  <strong>Og:</strong>
+  <%= @beer.og %>
+</p>
+
+<p>
+  <strong>Fg:</strong>
+  <%= @beer.fg %>
+</p>
+
+<p>
+  <strong>Abv:</strong>
+  <%= @beer.abv %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @beer.color %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @beer.instructions %>
+</p>
+
+<p>
+  <strong>Added by:</strong>
+  <%= User.find(@beer.added_by).email %>
+</p>
+
+<p>
+<strong><%= link_to 'Likes:', beer_like_path(@beer), method: :post %> </strong><%= @likes %>
+<strong><%= link_to 'Dislikes:', beer_dislike_path(@beer), method: :post %> </strong><%= @dislikes %>
+</p>
+<hr>
+<h3>Ingredients</h3>
+<ul> 
+  <% if @beer.ingredients %>
+    <% @beer.ingredients.each do |ingredient| %>
+      <li><%= ingredient.qty %> <%= ingredient.measurement %> <%= ingredient.name %> </li>
+    <% end %>
+  <% else %>
+    <li>No ingredients yet!</li>
+  <% end %>
+</ul>
+<% if @beer.added_by == current_user.id %>
+ <%= link_to 'Add Ingredient', new_beer_ingredient_path(@beer) %>
+<% end %>
+<hr>
+<h3>Comments</h3>
+<%= link_to 'New Comment', new_beer_beer_comment_path(@beer) %>
+<% if !@beer.beer_comments %>
+  <p>No comments</p>
+<% else %>
+  <% @beer.beer_comments.each do |comment| %>
+    <h4><%= User.find(comment.user_id).email %><h4>
+    <p><%= comment.body%></p>
+    <br/>
+  <% end %>
+<%= link_to 'Back', beers_path %>
+<% end %>

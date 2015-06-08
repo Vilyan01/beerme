@@ -1,0 +1,2 @@
+module BeerRatingsHelper
+end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Beer:</strong>
+  <%= @beer_comment.beer %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @beer_comment.like %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @beer_comment.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_beer_comment_path(@beer_comment) %> |
+<%= link_to 'Back', beer_comments_path %>
